@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.nyokabi.harakamall.ui.screens.about.AboutScreen
 import com.nyokabi.harakamall.ui.screens.Home.HomeScreen
+import com.nyokabi.harakamall.ui.screens.dashboard.DashboardScreen
 import com.nyokabi.harakamall.ui.screens.intent.IntentScreen
 import com.nyokabi.harakamall.ui.screens.items.ItemScreen
 import com.nyokabi.harakamall.ui.screens.start.StartScreen
@@ -17,7 +18,7 @@ import com.nyokabi.harakamall.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_DASHBOARD
 ) {
 
     NavHost(
@@ -41,6 +42,9 @@ fun AppNavHost(
         }
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+        composable(ROUT_DASHBOARD) {
+            DashboardScreen(navController)
         }
 
     }
