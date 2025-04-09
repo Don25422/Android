@@ -12,6 +12,7 @@ import com.nyokabi.harakamall.ui.screens.Home.HomeScreen
 import com.nyokabi.harakamall.ui.screens.dashboard.DashboardScreen
 import com.nyokabi.harakamall.ui.screens.intent.IntentScreen
 import com.nyokabi.harakamall.ui.screens.items.ItemScreen
+import com.nyokabi.harakamall.ui.screens.service.ServiceScreen
 import com.nyokabi.harakamall.ui.screens.start.StartScreen
 
 @Composable
@@ -45,6 +46,9 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
+        }
+        composable(ROUT_SERVICE) {
+            ServiceScreen(navController)
         }
 
     }

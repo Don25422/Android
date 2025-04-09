@@ -2,6 +2,7 @@ package com.nyokabi.harakamall.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,7 +14,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
@@ -46,7 +49,9 @@ import com.nyokabi.harakamall.ui.theme.newwhite
 @Composable
 fun DashboardScreen(navController: NavController){
     Column (modifier = Modifier
-        .fillMaxSize().background(neworange)
+        .fillMaxSize()
+        .background(neworange)
+        .verticalScroll(rememberScrollState())
     ){
 
         Box (){
@@ -97,9 +102,11 @@ fun DashboardScreen(navController: NavController){
         //Row1
         Row(modifier = Modifier.padding(start = 20.dp)) {
             //Card1
-            Card(modifier = Modifier.width(150.dp).height(180.dp), onClick = {
-                navController.navigate(ROUT_HOME)
-            }) {
+            Card(modifier = Modifier
+                .width(150.dp)
+                .height(180.dp)
+                .clickable{ navController.navigate(ROUT_HOME)}
+            ) {
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -115,13 +122,15 @@ fun DashboardScreen(navController: NavController){
             }
             //End of card1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
 
             //Card2
-            Card(modifier = Modifier.width(150.dp).height(180.dp), onClick = {
-                navController.navigate(ROUT_ABOUT)
-            }) {
+            Card(modifier = Modifier
+                .width(150.dp)
+                .height(180.dp)
+                .clickable{ navController.navigate(ROUT_ABOUT)}
+            ) {
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -145,9 +154,12 @@ fun DashboardScreen(navController: NavController){
         //Row2
         Row(modifier = Modifier.padding(start = 20.dp)) {
             //Card1
-            Card(modifier = Modifier.width(150.dp).height(180.dp), onClick = {
-                navController.navigate(ROUT_INTENT)
-            }) {
+            Card(modifier = Modifier
+                .width(150.dp)
+                .height(180.dp)
+                .clickable{ navController.navigate(ROUT_INTENT)}
+
+            ) {
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -163,13 +175,15 @@ fun DashboardScreen(navController: NavController){
             }
             //End of card1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
 
             //Card2
-            Card(modifier = Modifier.width(150.dp).height(180.dp), onClick = {
-                navController.navigate(ROUT_ITEM)
-            }) {
+            Card(modifier = Modifier
+                .width(150.dp)
+                .height(180.dp)
+                .clickable{ navController.navigate(ROUT_ITEM)}
+            ) {
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
