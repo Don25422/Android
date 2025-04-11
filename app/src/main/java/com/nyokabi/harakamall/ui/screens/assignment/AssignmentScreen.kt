@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -42,6 +43,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,6 +55,7 @@ import com.navigation.ROUT_HOME
 import com.nyokabi.harakamall.R
 import com.nyokabi.harakamall.ui.theme.newblue
 import com.nyokabi.harakamall.ui.theme.newgreen
+import com.nyokabi.harakamall.ui.theme.newgrey
 import com.nyokabi.harakamall.ui.theme.neworange
 import com.nyokabi.harakamall.ui.theme.newwhite
 
@@ -126,14 +129,18 @@ fun AssignmentScreen(navController: NavController){
 
 
                 Column (
-                    modifier = Modifier.fillMaxSize().padding(start = 20.dp, top = 90.dp),
+                    modifier = Modifier.fillMaxSize(),
 
                 ){
                     Text(text = "Hi Samantha",
                         fontSize = 30.sp,
-                        fontWeight = FontWeight.ExtraBold
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 20.dp, top = 90.dp)
+
                     )
-                    Text(text = "Here are your projects")
+                    Text(text = "Here are your projects",
+                        modifier = Modifier.padding(start = 20.dp)
+                        )
 
                     Spacer(modifier = Modifier.height(40.dp))
 
@@ -142,22 +149,22 @@ fun AssignmentScreen(navController: NavController){
                         modifier = Modifier.horizontalScroll(rememberScrollState())
                     ){
                         //Card1
-                        Card(modifier = Modifier
+                        Card(modifier = Modifier.padding(start = 20.dp)
                             .width(150.dp)
                             .height(250.dp)
                             .clickable{ navController.navigate(ROUT_HOME)}
                         ) {
                             Column (
-                                modifier = Modifier.fillMaxSize().background(newblue),
-                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.fillMaxSize().background(newblue).padding(20.dp),
                                 verticalArrangement = Arrangement.Center,
 
                             ){
                                 Image(
-                                    painter = painterResource(R.drawable.img_2),
+                                    painter = painterResource(R.drawable.img_7),
                                     contentDescription = "home"
                                 )
-                                Text(text ="Home", fontSize = 15.sp )
+                                Text(text ="Cryptocurreny", fontSize = 15.sp )
+                                Text(text ="Landing Page", fontSize = 15.sp )
                             }
 
                         }
@@ -166,7 +173,7 @@ fun AssignmentScreen(navController: NavController){
                         Spacer(modifier = Modifier.width(40.dp))
 
                         //Card2
-                        Card(modifier = Modifier
+                        Card(modifier = Modifier.padding(start = 20.dp)
                             .width(150.dp)
                             .height(250.dp)
                             .clickable{ navController.navigate(ROUT_HOME)}
@@ -177,7 +184,7 @@ fun AssignmentScreen(navController: NavController){
 
                             ){
                                 Image(
-                                    painter = painterResource(R.drawable.img_2),
+                                    painter = painterResource(R.drawable.img_8),
                                     contentDescription = "home"
                                 )
                                 Text(text ="Statistics", fontSize = 15.sp )
@@ -190,7 +197,7 @@ fun AssignmentScreen(navController: NavController){
                         Spacer(modifier = Modifier.width(40.dp))
 
                         //Card3
-                        Card(modifier = Modifier
+                        Card(modifier = Modifier.padding(start = 20.dp)
                             .width(150.dp)
                             .height(250.dp)
                             .clickable{ navController.navigate(ROUT_HOME)}
@@ -210,10 +217,76 @@ fun AssignmentScreen(navController: NavController){
 
 
                     }
+
+                    Spacer(modifier = Modifier.height(40.dp))
+
+
+                        //Card4
+                        Card(modifier = Modifier.fillMaxSize().clickable{ navController.navigate(ROUT_HOME)
+                            },
+                            shape = RectangleShape
+                        ) {
+                            Column (
+                                modifier = Modifier.fillMaxSize().background(newgrey),
+                            ){
+                                Text(text="Personal Tasks",
+                                    modifier = Modifier.padding(start = 20.dp, top = 10.dp),
+                                    fontSize = 20.sp,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    )
+
+                                Spacer(modifier = Modifier.height(30.dp))
+
+                                //Card 1a
+                                Card(modifier = Modifier.padding(start = 15.dp, end = 10.dp)
+                                    .width(500.dp)
+                                    .height(50.dp)
+                                    .clickable{ navController.navigate(ROUT_HOME)}
+                                ) {
+                                    Column (
+                                        modifier = Modifier.fillMaxSize(),
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        verticalArrangement = Arrangement.Center
+                                    ){
+
+
+                                    }
+
+                                }
+                                //End of card 1a
+
+                                Spacer(modifier = Modifier.height(10.dp))
+
+                                //Card 2b
+                                Card(modifier = Modifier.padding(start = 15.dp, end = 10.dp)
+                                    .width(500.dp)
+                                    .height(50.dp)
+                                    .clickable{ navController.navigate(ROUT_HOME)}
+                                ) {
+                                    Column (
+                                        modifier = Modifier.fillMaxSize(),
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        verticalArrangement = Arrangement.Center
+                                    ){
+
+
+                                    }
+
+                                }
+                                //End of card 2b
+
+
+                            }
+
+                        }
+                        //End of card4
+
+
+
+
+
+
                 }
-
-
-
 
 
 
@@ -227,6 +300,7 @@ fun AssignmentScreen(navController: NavController){
     )
 
     //End of scaffold
+
 
 
 }

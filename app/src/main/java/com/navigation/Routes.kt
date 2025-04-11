@@ -9,4 +9,6 @@ const val ROUT_DASHBOARD = "dashboard"
 const val ROUT_SERVICE = "service"
 const val ROUT_SPLASH = "splash"
 const val ROUT_ASSIGNMENT = "assignment"
+const val ROUT_FORM = "form"
+const val ROUT_FORM1 = "form1"
 

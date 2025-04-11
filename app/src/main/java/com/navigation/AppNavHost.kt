@@ -12,6 +12,8 @@ import com.nyokabi.harakamall.ui.screens.Home.HomeScreen
 import com.nyokabi.harakamall.ui.screens.assignment.AssignmentScreen
 import com.nyokabi.harakamall.ui.screens.assignment.AssignmentScreenPreview
 import com.nyokabi.harakamall.ui.screens.dashboard.DashboardScreen
+import com.nyokabi.harakamall.ui.screens.form.FormScreen
+import com.nyokabi.harakamall.ui.screens.form1.Form1Screen
 import com.nyokabi.harakamall.ui.screens.intent.IntentScreen
 import com.nyokabi.harakamall.ui.screens.items.ItemScreen
 import com.nyokabi.harakamall.ui.screens.service.ServiceScreen
@@ -58,6 +60,12 @@ fun AppNavHost(
         }
         composable(ROUT_ASSIGNMENT) {
             AssignmentScreen(navController)
+        }
+        composable(ROUT_FORM) {
+            FormScreen(navController)
+        }
+        composable(ROUT_FORM1) {
+            Form1Screen(navController)
         }
 
     }
